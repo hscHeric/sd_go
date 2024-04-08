@@ -54,6 +54,7 @@ func main() {
 				return
 			}
 			sucesso++
+			client.conn.Close()
 		}()
 	}
 
