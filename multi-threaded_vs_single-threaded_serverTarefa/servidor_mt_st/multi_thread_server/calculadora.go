@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"sync"
+	"time"
 )
 
 var once sync.Once
@@ -21,6 +23,9 @@ func getInstance() *Calculadora {
 }
 
 func (Calculadora) Calculate(operation string, num1, num2 float64) (float64, error) {
+	number_rand := rand.Intn(101)
+	time.Sleep(time.Duration(number_rand) * time.Millisecond)
+
 	switch operation {
 	case "add":
 		return num1 + num2, nil

@@ -55,6 +55,8 @@ func (c *Connection) HandleConnection() {
 			return
 		}
 
+		fmt.Println(request)
+
 		operation, num1, num2, err := handleCalcString(request)
 		if err != nil {
 			c.SendResponse("Erro ao converter os números: " + err.Error() + "\n")
